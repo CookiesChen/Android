@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MediaPlayer</string>
+    <string name="playorpause">playOrPause</string>
+    <string name="stop">stop</string>
+</resources>

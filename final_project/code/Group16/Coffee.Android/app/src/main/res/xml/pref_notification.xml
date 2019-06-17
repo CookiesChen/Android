@@ -1,0 +1,26 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+            android:key="notifications_open"
+            android:title="通知提醒"
+            android:summaryOn="当收到以下事件时候，将会通过通知提醒你"
+            android:summaryOff="你不会收到任何的通知提醒"
+            android:defaultValue="true"/>
+    <PreferenceCategory android:title="通知类型">
+        <SwitchPreference
+                android:dependency="notifications_open"
+                android:key="notifications_comment"
+                android:title="收到评论/回复"
+                android:defaultValue="true"/>
+        <SwitchPreference
+                android:dependency="notifications_open"
+                android:key="notifications_system"
+                android:title="系统通知"
+                android:defaultValue="true"/>
+        <SwitchPreference
+                android:dependency="notifications_open"
+                android:key="notifications_like"
+                android:title="收到点赞"
+                android:defaultValue="true"/>
+    </PreferenceCategory>
+</PreferenceScreen>

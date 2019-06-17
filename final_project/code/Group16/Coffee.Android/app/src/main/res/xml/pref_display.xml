@@ -1,0 +1,27 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+            android:key="font_size"
+            android:title="内容字体大小"
+            android:entries="@array/pref_font_size_titles"
+            android:entryValues="@array/pref_font_size_values"
+            android:defaultValue="15"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"/>
+
+    <ListPreference
+            android:key="image_display"
+            android:title="图片显示"
+            android:entries="@array/pref_image_display_titles"
+            android:entryValues="@array/pref_image_display_values"
+            android:defaultValue="always"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"/>
+
+    <SwitchPreference
+            android:key="night_auto"
+            android:title="自动切换夜间模式"
+            android:summary="重启后生效"
+            android:defaultValue="false"/>
+
+</PreferenceScreen>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">network</string>
+    <string name="id">输入id</string>
+    <string name="research">搜索</string>
+    <string name="example_title">[人生的导师松冈修造]東方修夢造</string>
+    <string name="play_text">播放:</string>
+    <string name="video_review_text">评论:</string>
+    <string name="duration_text">时长:</string>
+    <string name="create_text">创建时间:</string>
+    <string name="repo_name_text">项目名:</string>
+    <string name="issue_num_text">存在问题:</string>
+    <string name="repo_description_text">项目描述:</string>
+    <string name="title">输入title</string>
+    <string name="add">add</string>
+    <string name="issue_title_text">Title:</string>
+    <string name="issue_create_text">创建时间:</string>
+    <string name="issue_state_text">问题状态:</string>
+    <string name="issue_description_text">问题描述:</string>
+    <string name="body">输入body</string>
+</resources>

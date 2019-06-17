@@ -1,0 +1,29 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="studio.xmatrix.coffee.ui.setting.SettingsActivity$NotificationPreferenceFragment"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:summary="管理应用通知"
+        android:title="@string/pref_header_notifications" />
+
+    <header
+        android:fragment="studio.xmatrix.coffee.ui.setting.SettingsActivity$DisplayPreferenceFragment"
+        android:icon="@drawable/ic_display"
+        android:summary="调节应用显示"
+        android:title="@string/pref_header_display" />
+
+    <header
+        android:fragment="studio.xmatrix.coffee.ui.setting.SettingsActivity$GeneralPreferenceFragment"
+        android:icon="@drawable/ic_general"
+        android:summary="应用通用设置"
+        android:title="@string/pref_header_general" />
+
+    <header
+        android:id="@+id/about"
+        android:icon="@drawable/ic_about"
+        android:summary="关于Coffee"
+        android:title="@string/pref_header_about" />
+
+</preference-headers>

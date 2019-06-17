@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bilibiliMovie"
+            type="com.example.cookieschen.network.BilibiliMovie"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:contentPadding="5dp"
+            app:cardCornerRadius="8dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:id="@+id/cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    tools:ignore="ContentDescription"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:scaleType="centerCrop"
+                    android:visibility="invisible"/>
+                
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    android:padding="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    style="?android:attr/progressBarStyleLarge"/>
+
+                <SeekBar
+                    android:id="@+id/seekbar"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cover"
+                    android:visibility="invisible"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/seekbar"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="@{bilibiliMovie.data.title}"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/card_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/play_text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/play_text"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/play"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@{Integer.toString(bilibiliMovie.data.play)}"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp" />
+
+                    <TextView
+                        android:id="@+id/video_review_text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/video_review_text"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp" />
+
+                    <TextView
+                        android:id="@+id/video_review"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@{Integer.toString(bilibiliMovie.data.video_review)}"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"/>
+
+                    <TextView
+                        android:id="@+id/duration_text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/duration_text"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"/>
+
+                    <TextView
+                        android:id="@+id/duration"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@{bilibiliMovie.data.duration}"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/create_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/card_content"
+                    android:text="@string/create_text"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/card_content"
+                    app:layout_constraintLeft_toRightOf="@+id/create_text"
+                    android:text="@{bilibiliMovie.data.create}"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            app:contentPadding="5dp"
+            app:cardCornerRadius="8dp">
+            <TextView
+                android:id="@+id/content"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:text="@{bilibiliMovie.data.content}"/>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</layout>

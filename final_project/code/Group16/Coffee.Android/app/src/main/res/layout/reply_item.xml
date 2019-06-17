@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="studio.xmatrix.coffee.data.service.resource.CommentsResource.ReplyForComment" />
+
+        <import type="java.lang.Long" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/reply_name"
+            android:layout_width="wrap_content"
+            android:transitionName="userName"
+            android:layout_height="wrap_content"
+            android:text="@{@string/reply_name(model.user.name)}"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintBottom_toTopOf="@id/reply_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ZhenlyChen:" />
+
+        <TextView
+            android:id="@+id/reply_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:transitionName="userName"
+            android:layout_marginStart="8dp"
+            android:text="@{@string/reply_at_str(model.father.name)}"
+            android:textColor="#39adf1"
+            app:layout_constraintBottom_toBottomOf="@+id/reply_name"
+            app:layout_constraintStart_toEndOf="@+id/reply_name"
+            app:layout_constraintTop_toTopOf="@+id/reply_name"
+            tools:text="#Megashow" />
+
+        <TextView
+            android:id="@+id/reply_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textSize="12sp"
+            android:textColor="@color/colorTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="一天前" />
+
+        <TextView
+            android:id="@+id/reply_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="10dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:paddingEnd="8dp"
+            android:paddingVertical="10dp"
+            android:text="@{model.reply.content}"
+            android:textColor="@color/colorText"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintEnd_toStartOf="@+id/reply_like"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reply_name"
+            tools:text="Hello,world.Hello,world.Hello,world.Hello,world.Hello,world." />
+
+        <ImageView
+            android:id="@+id/reply_like"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_like_none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/like_num"
+            app:layout_constraintTop_toTopOf="@+id/reply_content" />
+
+        <TextView
+            android:id="@+id/like_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="@{Long.toString(model.reply.likeNum)}"
+            app:layout_constraintBottom_toBottomOf="@+id/reply_like"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reply_like"
+            tools:text="2" />
+
+        <!--<ImageView-->
+        <!--android:id="@+id/comment_delete"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:login_background="?attr/selectableItemBackgroundBorderless"-->
+        <!--android:clickable="true"-->
+        <!--android:padding="10dp"-->
+        <!--android:src="@drawable/ic_delete"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <ImageView
+            android:id="@+id/reply_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/colorTime"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

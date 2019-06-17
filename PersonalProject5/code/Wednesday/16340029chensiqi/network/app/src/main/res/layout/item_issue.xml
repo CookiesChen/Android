@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="issue"
+            type="com.example.cookieschen.network.Issue"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:contentPadding="5dp"
+        app:cardCornerRadius="8dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:id="@+id/issue_ly"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/issue_title_text"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/issue_title_text"/>
+
+                <TextView
+                    android:id="@+id/issue_title"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@{issue.title}"
+                    android:layout_marginStart="10dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/issue_create_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/issue_ly"
+                android:layout_marginTop="10dp"
+                android:text="@string/issue_create_text"
+                />
+
+            <TextView
+                android:id="@+id/issue_create"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/issue_ly"
+                app:layout_constraintLeft_toRightOf="@+id/issue_create_text"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:text="@{issue.created_at}" />
+
+            <TextView
+                android:id="@+id/issue_state_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/issue_create_text"
+                android:layout_marginTop="10dp"
+                android:text="@string/issue_state_text" />
+
+            <TextView
+                android:id="@+id/issue_state"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/issue_create_text"
+                app:layout_constraintLeft_toRightOf="@+id/issue_state_text"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:text="@{issue.state}" />
+
+            <TextView
+                android:id="@+id/issue_description_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/issue_state_text"
+                android:layout_marginTop="10dp"
+                android:text="@string/issue_description_text" />
+
+            <TextView
+                android:id="@+id/issue_description"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/issue_state_text"
+                app:layout_constraintLeft_toRightOf="@+id/issue_description_text"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:text="@{issue.body}" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

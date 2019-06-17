@@ -1,0 +1,8 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+            android:key="clear_cache"
+            android:title="清除缓存"/>
+
+
+</PreferenceScreen>

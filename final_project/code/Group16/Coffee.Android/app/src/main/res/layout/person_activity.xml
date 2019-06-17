@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/person_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/person_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                <FrameLayout
+                    android:id="@+id/person_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <LinearLayout
+                        android:id="@+id/person_linear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/person_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:text="MegaShow"
+                            android:textColor="@color/colorAvatar"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/person_bio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:maxLines="2"
+                            android:text="我好强啊！！我好强啊！！我好强啊！！"
+                            android:textColor="@color/colorTitle" />
+                    </LinearLayout>
+                </FrameLayout>
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/person_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="80dp"
+                    android:text="昵称：MegaShow"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/person_name_edit"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/person_name"
+                    app:layout_constraintStart_toEndOf="@id/person_name"
+                    app:layout_constraintTop_toTopOf="@id/person_name" />
+
+                <TextView
+                    android:id="@+id/person_class"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="用户类型:"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/person_name" />
+
+                <com.robertlevonyan.views.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:padding="6dp"
+                    app:layout_constraintBottom_toBottomOf="@id/person_class"
+                    app:layout_constraintStart_toEndOf="@id/person_class"
+                    app:layout_constraintTop_toTopOf="@id/person_class"
+                    app:mcv_backgroundColor="@color/colorAccent"
+                    app:mcv_chipText="VIP用户"
+                    app:mcv_cornerRadius="12dp"
+                    app:mcv_textColor="@color/colorWhite" />
+
+                <TextView
+                    android:id="@+id/person_text_cap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="我的空间：4.5MB/8.0MB"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@id/person_class" />
+
+
+                <com.mikhaellopez.circularfillableloaders.CircularFillableLoaders
+                    android:id="@+id/circularFillableLoaders"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="40dp"
+                    android:tooltipText="4.5MB/8.0MB"
+                    app:cfl_border="true"
+                    app:cfl_border_width="3dp"
+                    app:cfl_progress="40"
+                    app:cfl_wave_amplitude="0.06"
+                    app:cfl_wave_color="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/person_text_cap" />
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/person_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorPrimary"
+            app:layout_anchor="@id/person_toolbar_layout"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            app:title="">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="@dimen/image_final_width"
+                    android:layout_height="@dimen/image_final_width" />
+
+                <TextView
+                    android:id="@+id/person_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="MegaShow"
+                    android:textColor="@color/colorAvatar"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_big_avatar"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_width"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="70dp"
+            android:src="@mipmap/ic_launcher"
+            android:translationZ="6dp"
+            app:civ_border_color="@color/colorAvatar"
+            app:civ_border_overlay="true"
+            app:civ_border_width="2dp"
+            app:finalHeight="@dimen/image_final_width"
+            app:finalToolbarHeight="?attr/actionBarSize"
+            app:finalXPosition="54dp"
+            app:finalYPosition="36dp"
+            app:layout_behavior="studio.xmatrix.coffee.ui.AvatarImageBehavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

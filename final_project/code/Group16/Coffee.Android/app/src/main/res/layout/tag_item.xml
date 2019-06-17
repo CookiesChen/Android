@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.robertlevonyan.views.chip.Chip
+        android:layout_margin="10dp"
+        android:id="@+id/tag_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/person_class"
+        app:layout_constraintStart_toEndOf="@id/person_class"
+        app:layout_constraintTop_toTopOf="@id/person_class"
+        app:mcv_backgroundColor="@color/colorAccent"
+        app:mcv_chipText="很好"
+        app:mcv_textColor="@color/colorWhite" />
+
+</layout>

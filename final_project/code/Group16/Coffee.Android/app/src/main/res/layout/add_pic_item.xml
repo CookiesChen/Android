@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp">
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+        <ImageView
+            android:id="@+id/remove"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/ic_remove"
+            android:backgroundTint="@color/colorWhite"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintTop_toTopOf="@id/pic"
+            app:layout_constraintEnd_toEndOf="@id/pic"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

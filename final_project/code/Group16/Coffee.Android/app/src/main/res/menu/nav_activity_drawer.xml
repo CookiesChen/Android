@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group>
+        <item
+                android:id="@+id/nav_person"
+                android:icon="@drawable/ic_person_filled"
+                android:title="个人设置"/>
+        <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_settings"
+                android:title="应用设置"/>
+    </group>
+
+    <item android:title="操作">
+        <menu>
+            <item
+                    android:id="@+id/nav_night"
+                    android:icon="@drawable/ic_night"
+                    android:title="夜间模式"/>
+            <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_log_out"
+                    android:title="退出登陆"/>
+
+        </menu>
+    </item>
+
+</menu>
